@@ -27,3 +27,25 @@ Create a for loop:
     <p>{{ number }} </p>
 
 {% endfor %}
+
+## Read a JSON file
+Import Json in py file.
+In about route add:  
+  with open("flask/data/company.json", "r") as json_data:   
+        data = json.load(json_data)  
+    return render_template("about.html", page_title="About", company=data)  
+
+in about template add:   
+ {{ company[0]["name"] }} 
+   
+## For loop
+Will iterate through all of the data in the json file down to the *endfor*
+and include the HTML and variables we've set.  
+ **How to do this:**  
+1. Place all the about **informaion** in the **json file**.   
+2. Wraped the characther info in a **for loop** with **{% for member in company %}** and at the end **{% endfor %}**.   
+3. Replace the name with **{{ member.name }}** usiong the json key value.
+4. paragraph with **{{ member.description }}**.   
+5. Image source with **{{ member.image_source }}**
+
+
