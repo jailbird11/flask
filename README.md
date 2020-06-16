@@ -13,3 +13,5 @@ Ls
 Unzip -gh-pages.zip
 
 Added css link to base.html file .
+
+Copied html from index on the bootstrap theme and paseted into my file.
